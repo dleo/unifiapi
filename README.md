@@ -7,7 +7,7 @@ This is an adaptation for Unifi sh api (https://dl.ubnt.com/unifi/5.3.8/unifi_sh
 Install the latest version with
 
 ```bash
-$ composer require monolog/monolog
+$ composer require dleo/unifiapi
 ```
 
 ## Basic Usage
