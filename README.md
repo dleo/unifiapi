@@ -1,6 +1,6 @@
 # unifiapi
 ## Unifi API for PHP.
-This is an adaptation for Unifi sh api (https://dl.ubnt.com/unifi/5.3.8/unifi_sh_api).
+This is an adaptation for Ubiquiti Unifi Controller sh api (https://dl.ubnt.com/unifi/5.3.8/unifi_sh_api).
 
 ## Installation
 
@@ -42,6 +42,6 @@ Unifi Api is licensed under the GNU GPLv3 License - see the `LICENSE` file for d
 
 ### Acknowledgements
 
-This library is heavily inspired by Unifi API (https://dl.ubnt.com/unifi/5.3.8/unifi_sh_api)
+This library is heavily inspired by Ubiquiti Networks Unifi API (https://dl.ubnt.com/unifi/5.3.8/unifi_sh_api)
 library, although most concepts have been adjusted to fit to the PHP world.
 
