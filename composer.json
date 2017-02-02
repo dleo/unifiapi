@@ -2,7 +2,7 @@
   "name": "dleo/unifiapi",
   "description": "API Class for Unifi Controller",
   "license": "GNU GPLv3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "David López",
