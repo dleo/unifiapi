@@ -428,11 +428,6 @@ class Api
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        if ($this->controller >= 4) {
-            curl_setopt($ch, CURLOPT_SSLVERSION, 4);
-        } else {
-            curl_setopt($ch, CURLOPT_SSLVERSION, 3);
-        }
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         if ($this->debug == true) {
             curl_setopt($ch, CURLOPT_VERBOSE, true);
