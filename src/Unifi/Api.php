@@ -347,7 +347,34 @@ class Api
 
         return $return;
     }
-
+    
+    /**
+     * Device Stat 
+     * @param string $mac
+     * @return array of stat device object
+     */
+    public function getStatDevice($mac)
+    {
+        $return = array();
+        if (!$this->isLoggedin) return $return;
+        $return = array();
+        $json = "";
+        
+        $content = $this->execCurl($this->baseurl . "/api/s/" . $this->site . "/stat/user/" . $mac, "json={}");
+        $contentDecoded = json_decode($content);
+        if (isset($contentDecoded->meta->rc)) {
+            if ($contentDecoded->meta->rc == "ok") {
+                if (is_array($contentDecoded->data)) {
+                    foreach ($contentDecoded->data as $stat) {
+                        $return[] = $stat;
+                    }
+                }
+            }
+        }
+        
+        return $return;
+    }
+    
     /**
      * Create a voucher
      * @param $minutes
