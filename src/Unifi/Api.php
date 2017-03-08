@@ -349,6 +349,31 @@ class Api
     }
 
     /**
+     * All Stat 
+     * @return array of stat device object
+     */
+    public function getStat()
+    {
+        $return = array();
+        if (!$this->isLoggedin) return $return;
+        $return = array();
+        
+        $content = $this->execCurl($this->baseurl . "/api/s/" . $this->site . "/stat/sta", "json={}");
+        $contentDecoded = json_decode($content);
+        if (isset($contentDecoded->meta->rc)) {
+            if ($contentDecoded->meta->rc == "ok") {
+                if (is_array($contentDecoded->data)) {
+                    foreach ($contentDecoded->data as $stat) {
+                        $return[] = $stat;
+                    }
+                }
+            }
+        }
+        
+        return $return;
+    }
+    
+    /**
      * Create a voucher
      * @param $minutes
      * @param int $numberOfVouchersToCreate
