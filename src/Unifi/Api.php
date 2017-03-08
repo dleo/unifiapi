@@ -511,7 +511,7 @@ class Api
     {
         if (!$this->is_loggedin) return false;
         $return          = [];
-        $json            = json_encode(['type' => 'all', 'conn' => 'all', 'within' => $historyhours)]);
+        $json            = json_encode(['type' => 'all', 'conn' => 'all', 'within' => $historyhours]);
         $content_decoded = json_decode($this->exec_curl($this->baseurl.'/api/s/'.$this->site.'/stat/alluser','json='.$json));
         if (isset($content_decoded->meta->rc)) {
             if ($content_decoded->meta->rc == 'ok') {
