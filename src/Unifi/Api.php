@@ -484,4 +484,26 @@ class Api
         return "3";
     }
 
+    /**
+     * List all client devices ever connected to the site
+     */
+    public function statAllusers($historyhours = 8760)
+    {
+        if (!$this->is_loggedin) return false;
+        $return          = [];
+        $json            = json_encode(['type' => 'all', 'conn' => 'all', 'within' => $historyhours)]);
+        $content_decoded = json_decode($this->exec_curl($this->baseurl.'/api/s/'.$this->site.'/stat/alluser','json='.$json));
+        if (isset($content_decoded->meta->rc)) {
+            if ($content_decoded->meta->rc == 'ok') {
+                if (is_array($content_decoded->data)) {
+                    foreach ($content_decoded->data as $stats) {
+                        $return[]= $stats;
+                    }
+                }
+            }
+        }
+
+        return $return;
+    }
+
 }
